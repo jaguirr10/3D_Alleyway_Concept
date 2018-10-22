@@ -1,0 +1,89 @@
+/* Juan Aguirre */
+
+
+body {
+  font-size: 100%;
+  overflow: hidden;
+  
+}
+
+body{
+	
+	background: #232526;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+ height: 100vh;
+  
+
+}
+
+
+
+
+#SceneContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -5em;
+  margin-top: -5em;
+  transform-style: preserve-3d;
+  width: 30em;
+  height: 30em;
+  perspective: 300px;
+  perspective-origin: 50% 50%;
+  animation-name: spin;
+  animation-duration: 13s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.wall, #Right, #Left, #Bottom, #Top, #Back {
+  width: 20em;
+  height: 20em;
+  background: red;
+  position: absolute;
+}
+
+#Right {
+  transform: rotateY(90deg) translateZ(10em);
+  background: url("walls1.jpg");
+  background-size: cover;
+}
+
+#Left {
+  transform: rotateY(90deg) translateZ(-10em);
+  background: url("walls2.jpg");
+  background-size: cover;
+}
+
+#Bottom {
+  background: blue;
+  transform: rotateX(90deg) translateZ(-10em);
+  background: url("floor.jpg");
+  background-size: cover;
+}
+
+#Top {
+  background: blue;
+  transform: rotateX(90deg) translateZ(10em);
+  background: url("roof.jpg");
+  background-size: cover;
+}
+
+#Back {
+  background: yellow;
+  transform: translateZ(-10em);
+  background: url("spraywall2.jpg");
+  background-size: cover;
+}
+
+@keyframes spin {
+  from {
+    perspective-origin: 80% 60%;
+  }
+  to {
+    perspective-origin: 20% 40%;
+  }
+}
